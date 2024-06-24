@@ -10,3 +10,18 @@ spec:
     - name: mongo
       image: mongo
 ---
+## Annotations & labels
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod03
+  annotations:
+    imageregistry: "https://hub.docker.com/"
+  labels:
+    name: annotations-demo
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      ports:
+        - containerPort: 80
