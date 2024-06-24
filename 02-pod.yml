@@ -9,3 +9,4 @@ spec:
 
     - name: mongo
       image: mongo
+---
