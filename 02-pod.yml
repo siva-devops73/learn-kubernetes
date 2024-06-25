@@ -26,17 +26,14 @@ spec:
       ports:
         - containerPort: 80
 ---
+## Namespace & Image pull policy
 apiVersion: v1
 kind: Pod
 metadata:
   name: pod04
-  annotations:
-    imageregistry: "https://hub.docker.com"
-  labels:
-    name: annotations-demo
+  namespace: kube-system
 spec:
   containers:
-    - name: frontend
-      image: aalurisiva/frontend-s73
-      ports:
-        - containerPort: 80
+  - name: nginx
+    image: nginx
+    imagePullPolicy: Always
