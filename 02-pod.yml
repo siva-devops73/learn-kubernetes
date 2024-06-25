@@ -66,3 +66,24 @@ spec:
       image: mongo
       command: ["/bin/sh"]
       args: ["-c", "sleep 10 && echo Sleep expired > /dev/termination-log"]
+---
+## Volume mount
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-pd
+spec:
+  containers:
+    - name: volume
+      image: mongo
+      command: [ "/bin/sh" ]
+      args: [ "-c", "while true ; do date ; sleep 2; done" ]
+      volumeMounts:
+        - mountPath: /data
+          name: test-volume
+  volumes:
+    - name: test-volume
+      hostPath:
+        path: /data
+        type: Directory
+
