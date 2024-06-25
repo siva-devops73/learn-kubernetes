@@ -54,3 +54,15 @@ spec:
         limits:
           memory: "128Mi"
           cpu: "500m"
+---
+##Termination message path & policy
+apiVersion: v1
+kind: Pod
+metadata:
+  name: termination-demo
+spec:
+  containers:
+    - name: mongo
+      image: mongo
+      command: ["/bin/sh"]
+      args: ["-c", "sleep 10 && echo Sleep expired > /dev/termination-log"]
