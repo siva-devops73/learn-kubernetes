@@ -31,7 +31,7 @@ kind: Pod
 metadata:
   name: pod04
   annotations:
-    imageregistry: "https://hub.docker.com/repositories/aalurisiva"
+    imageregistry: "https://hub.docker.com"
   labels:
     name: annotations-demo
 spec:
