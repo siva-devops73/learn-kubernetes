@@ -37,3 +37,20 @@ spec:
   - name: nginx
     image: nginx
     imagePullPolicy: Always
+---
+### Resources
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod05
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      resource:
+        requests:
+          memory: "64Mi"
+          cpu:    "250M"
+        limits:
+          memory: "128Mi"
+          cpu:    "500M"
