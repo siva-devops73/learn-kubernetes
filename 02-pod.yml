@@ -37,6 +37,6 @@ metadata:
 spec:
   containers:
     - name: frontend
-      image: aalurisiva/frontend-s73:tagname
+      image: aalurisiva/frontend-s73:latest
       ports:
         - containerPort: 80
