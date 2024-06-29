@@ -10,10 +10,12 @@ spec:
   selector:
     matchLabels:
       tier: frontend
+      type: rs
   template:
     metadata:
       labels:
         tier: frontend
+        type: rs
     spec:
       containers:
         - name: nginx
